@@ -1,26 +1,50 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { createGlobalStyle } from 'styled-components';
+
+import Header from './components/Header/Header';
+import Banner from './components/Carousel/Banner';
+import CtaBlock from './components/Sections/Cta';
+import HandPickedBlock from './components/Sections/Handpicked';
+
+const GlobalStyle = createGlobalStyle`
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+  }
+  html {
+    font-size: 62.5%;
+  }
+  body {
+    font-family: Lato, sans-serif;
+    font-size: 1.6rem;
+  }
+  svg {
+    height: 20px;
+    width: 20px;
+  }
+  li {
+    display: inline-block;
+    list-style: none;
+  }
+  a {
+    text-decoration: none;
+    color: currentColor;
+  }
+`;
 
 const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <GlobalStyle />
+      <Header />
+      <Banner />
+      <CtaBlock />
+      <HandPickedBlock />
+    </>
   );
-}
+};
 
 export default App;
