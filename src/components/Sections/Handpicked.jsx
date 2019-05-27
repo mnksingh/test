@@ -1,72 +1,40 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Container } from '../Common/Utility';
-
-const HeadingWrapper = styled(Container)`
-  justify-content: center;
-  margin-bottom: 3rem;
-  ::before,
-  ::after {
-    content: '';
-    height: 2px;
-    background: #ccc;
-    display: block;
-    flex: 1 1 auto;
-  }
-`;
-
-const Heading = styled.h2`
-  padding: 0 5%;
-  font-size: 30px;
-  font-style: italic;
-  font-weight: 700;
-  width: 30%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  ::before,
-  ::after {
-    content: '';
-    background: #dabe8f;
-    height: 15px;
-    width: 15px;
-    display: inline-block;
-    transform: rotate(150deg);
-  }
-`;
+import { Container, HeadingWrapper, Heading } from '../Common/Utility';
 
 const ContentWrapper = styled(Container)`
   display: grid;
   grid-gap: 1rem;
-  grid-template-columns: 1fr 2fr 1fr;
-  grid-auto-rows: auto auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-rows: 400px;
   img {
-    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    transition: all 0.3s;
   }
-  div:nth-child(1) {
-    grid-row: 1;
-    grid-column: 1;
-  }
-  div:nth-child(2) {
-    grid-row: 2;
-    grid-column: 2;
-  }
-  div:nth-child(3) {
-    grid-row: 3;
-    grid-column: 3;
-  }
-  div:nth-child(4) {
-    grid-row: 2;
-    grid-column: 2;
-  }
-  div:nth-child(5) {
-    grid-row: 2;
-    grid-column: 3;
+  li {
+    &:nth-child(2) {
+      grid-column: 2;
+      grid-row: 1/3;
+    }
   }
 `;
 
 const Item = styled.div`
   position: relative;
+  height: 100%;
+  overflow: hidden;
+  :hover {
+    img {
+      transform: scale(1.1);
+    }
+    ::before {
+      opacity: 0;
+    }
+  }
+
   ::before {
     content: '';
     position: absolute;
@@ -74,9 +42,14 @@ const Item = styled.div`
     left: 1rem;
     right: 1rem;
     bottom: 1rem;
-    border: 1px solid white;
+    border: 2px solid white;
+    z-index: 2;
+    transition: all 0.3s;
   }
 `;
+
+const handpicked_images = ['Handpicked-1.jpg', 'Handpicked-3.jpg', 'Handpicked-4.jpg', 'Handpicked-2.jpg', 'Handpicked-5.jpg']
+
 
 export default function Handpicked() {
   return (
@@ -84,22 +57,8 @@ export default function Handpicked() {
       <HeadingWrapper>
         <Heading>Handpicked</Heading>
       </HeadingWrapper>
-      <ContentWrapper>
-        <Item>
-          <img src='/assets/images/Handpicked-1.jpg' />
-        </Item>
-        <Item>
-          <img src='/assets/images/Handpicked-3.jpg' />
-        </Item>
-        <Item>
-          <img src='/assets/images/Handpicked-4.jpg' />
-        </Item>
-        <Item>
-          <img src='/assets/images/Handpicked-2.jpg' />
-        </Item>
-        <Item>
-          <img src='/assets/images/Handpicked-5.jpg' />
-        </Item>
+      <ContentWrapper as='ul'>
+        {handpicked_images.map(img => (<Item as="li" key={img}><img src={`assets/images/${img}`} alt={img} /></Item>))}
       </ContentWrapper>
     </>
   );

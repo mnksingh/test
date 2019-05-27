@@ -5,6 +5,7 @@ import Header from './components/Header/Header';
 import Banner from './components/Carousel/Banner';
 import CtaBlock from './components/Sections/Cta';
 import HandPickedBlock from './components/Sections/Handpicked';
+import SummerCollectionBlock from './components/Sections/Summer-Collection';
 
 const GlobalStyle = createGlobalStyle`
   *,
@@ -43,6 +44,7 @@ const App: React.FC = () => {
       <Banner />
       <CtaBlock />
       <HandPickedBlock />
+      <SummerCollectionBlock />
     </>
   );
 };
