@@ -1,11 +1,9 @@
-import React from 'react';
-import { createGlobalStyle } from 'styled-components';
+import React from "react"
+import { createGlobalStyle } from "styled-components"
 
-import Header from './components/Header/Header';
-import Banner from './components/Carousel/Banner';
-import CtaBlock from './components/Sections/Cta';
-import HandPickedBlock from './components/Sections/Handpicked';
-import SummerCollectionBlock from './components/Sections/Summer-Collection';
+import Header from "./components/Layout/Header"
+import HomePage from "./components/Pages/Home"
+import Footer from "./components/Layout/Footer"
 
 const GlobalStyle = createGlobalStyle`
   *,
@@ -34,19 +32,17 @@ const GlobalStyle = createGlobalStyle`
     text-decoration: none;
     color: currentColor;
   }
-`;
+`
 
 const App: React.FC = () => {
   return (
     <>
       <GlobalStyle />
       <Header />
-      <Banner />
-      <CtaBlock />
-      <HandPickedBlock />
-      <SummerCollectionBlock />
+      <HomePage />
+      <Footer />
     </>
-  );
-};
+  )
+}
 
-export default App;
+export default App

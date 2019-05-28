@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Krinkes Decor PERSONAL USE';
+    src: local('Krinkes Decor PERSONAL USE'), local('KrinkesDecorPERSONALUSE'),
+        url('hinted-KrinkesDecorPERSONALUSE.woff2') format('woff2'),
+        url('hinted-KrinkesDecorPERSONALUSE.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
