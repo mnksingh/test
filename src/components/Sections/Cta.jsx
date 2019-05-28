@@ -1,7 +1,7 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react"
+import styled from "styled-components"
 
-import { Container } from '../Common/Utility';
+import { Container } from "../Common/Utility"
 
 const CtaWrapper = styled(Container)`
   margin: 3rem auto;
@@ -21,9 +21,9 @@ const CtaWrapper = styled(Container)`
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;\
+    position: relative;
   }
-`;
+`
 
 const Left = styled.div`
   padding-right: 50px;
@@ -32,7 +32,7 @@ const Left = styled.div`
     transform: rotate(90deg);
   }
   ::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     right: 0;
@@ -41,7 +41,7 @@ const Left = styled.div`
     border-left: 25px solid;
     border-color: white white white transparent;
   }
-`;
+`
 
 const Middle = styled.div`
   background: black;
@@ -49,7 +49,7 @@ const Middle = styled.div`
   padding: 0 50px;
 
   ::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -60,7 +60,7 @@ const Middle = styled.div`
   }
 
   ::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: 0;
     right: 0;
@@ -69,14 +69,14 @@ const Middle = styled.div`
     border-left: 25px solid;
     border-color: transparent white transparent transparent;
   }
-`;
+`
 
 const Right = styled.div`
   background: #d9be8f;
   padding-left: 50px;
 
   ::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: 0;
     left: 0;
@@ -85,14 +85,14 @@ const Right = styled.div`
     border-left: 25px solid;
     border-color: white transparent white white;
   }
-`;
+`
 
 export default function Cta() {
   return (
     <CtaWrapper>
       <Left>
         <svg>
-          <use xlinkHref='/sprite.svg#icon-airplane' />
+          <use xlinkHref="/sprite.svg#icon-airplane" />
         </svg>
         <div>
           <h3>Free Shipping</h3>
@@ -101,7 +101,7 @@ export default function Cta() {
       </Left>
       <Middle>
         <svg>
-          <use xlinkHref='/sprite.svg#icon-clock-o' />
+          <use xlinkHref="/sprite.svg#icon-clock-o" />
         </svg>
         <div>
           <h3>30-Days Return</h3>
@@ -110,7 +110,7 @@ export default function Cta() {
       </Middle>
       <Right>
         <svg>
-          <use xlinkHref='/sprite.svg#icon-lifebuoy' />
+          <use xlinkHref="/sprite.svg#icon-lifebuoy" />
         </svg>
         <div>
           <h3>24/7 Support</h3>
@@ -118,5 +118,5 @@ export default function Cta() {
         </div>
       </Right>
     </CtaWrapper>
-  );
+  )
 }
